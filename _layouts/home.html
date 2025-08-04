@@ -1,20 +1,41 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
 {% endif %}
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  <div class="home-about">
+      <div class="about-text">
+          <h1>{{ page.greeter }}</h1>
+          {{ content }}
+      </div>
+
+      {% if page.front_img %}
+      <div class="about-image">
+          <img src="{{ page.front_img }}" alt="Test">
+      </div>
+      {% endif %}
+  </div>
+
+  <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
+
+  {% assign posts_to_show = site.posts | limit: 5 %}
+
+  <div class="entries-list">
+    {% include documents-collection.html entries=posts_to_show %}
+  </div>
+
 </div>
 
-{% include paginator.html %}
+
