@@ -15,22 +15,24 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-  <div class="home-about">
-      <div class="about-text">
+  <div class="home-greeting">
+      <div class="greeting-text">
           <h1>{{ page.greeter }}</h1>
           {{ content }}
       </div>
 
       {% if page.front_img %}
-      <div class="about-image">
+      <div class="greeting-image">
           <img src="{{ page.front_img }}" alt="Test">
       </div>
       {% endif %}
   </div>
 
-  <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
-
-  {% assign posts_to_show = site.posts | limit: 5 %}
+  <div class="recent-header">
+    <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
+    <a href="{{ site.baseurl }}/posts/" class="see-all-link">See All</a>
+  </div>
+  {% assign posts_to_show = site.posts | where_exp: "post", "post.hidden != true" | slice: 0, 5 %}
 
   <div class="entries-list">
     {% include documents-collection.html entries=posts_to_show %}
