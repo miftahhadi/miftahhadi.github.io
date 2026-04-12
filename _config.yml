@@ -219,6 +219,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  math_engine: mathjax
 
 
 # Sass/SCSS
@@ -325,6 +326,7 @@ defaults:
       comments: # true
       share: false
       related: false
+      # mathjax: true
   # _pages
   - scope:
       path: ""
