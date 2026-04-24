@@ -5,4 +5,4 @@ layout: posts
 
 ---
 
-A collection of notes, guides, and tutorials on things I learn.
+A collection of notes, guides, and tutorials on things I am interested in.

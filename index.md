@@ -6,6 +6,6 @@ front_img: "/assets/images/test.jpg"
 greeter: "Hi, there!"
 ---
 
-Welcome to my digital space. Here you can find my learning notes on anything, mostly physics and stuff related to my research.
+Welcome to my digital space. Here you can find my learning notes on anything, mostly physics and stuff related to research.
 
 

@@ -8,7 +8,7 @@ tags:
 math: true
 ---
 
-In the context of many-body quantum systems, the calculation is more efficient if we use the second quantization formulation. Instead of the standard many-body wave function, we use the so-called bosonic and fermionic operators. This post does not discuss the motivation on the second quantization, though. Here, I simply note some important identities.
+In the context of quantum many-body systems, the calculation is more efficient if we use the second quantization formulation. Instead of the standard many-body wave function, we use the so-called bosonic and fermionic operators. This post does not discuss the motivation on the second quantization, though. Here, I simply note some important identities.
 
 ### Bosonic Operators
 The bosonic creation and annihilation operators are usually written as $$a^{\dagger}$$ and $$a$$, respectively. They follow the following **commutation relation**,
